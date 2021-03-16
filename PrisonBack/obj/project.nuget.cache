@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pIBDWQPyBF7tKT1HI/yOVtHpBHlm3lwY5vu9myP3Yy7xkhvdt5eca6cr9mZIBWfhz7OiMHbtdTB7ONfx/eTBSQ==",
+  "dgSpecHash": "62y6jguhBTKEp3pk5JAVyDrFP2AUX26oPVCnoUMW8BYZpY5apvZEDb1x+idTEcd10iGSyYEZmbbBdZkISbrn7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\barti\\source\\repos\\Projekt\\test\\PrisonBack\\PrisonBack.csproj",
+  "projectFilePath": "C:\\ppo\\39607\\API\\PrisonBack\\PrisonBack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barti\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\barti\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
