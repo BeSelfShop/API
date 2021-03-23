@@ -20,10 +20,6 @@ namespace PrisonBack.Services
         {
             return _cellRepository.SelectedCell(id);
         }
-        public List<Cell> AllCell(String userName)
-        {
-            return _cellRepository.AllCell(userName);
-        }
         public void CreateCell(Cell cell)
         {
             _cellRepository.CreateCell(cell);
@@ -45,6 +41,11 @@ namespace PrisonBack.Services
         public int PrisonID(string userName)
         {
             return _cellRepository.PrisonID(userName);
+        }
+
+        public async Task<IEnumerable<Cell>> AllCell(string userName)
+        {
+            return await _cellRepository.AllCell(userName);
         }
     }
 }

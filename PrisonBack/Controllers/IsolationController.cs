@@ -28,14 +28,14 @@ namespace PrisonBack.Controllers
             _mapper = mapper;
             _loggerService = loggerService;
         }
-        [DisableCors]
+
         [HttpGet("{id}")]
         public ActionResult<PassVM> SelectedIsolation(int id)
         {
             var isolation = _isolationService.SelectedIsolation(id);
             return Ok(_mapper.Map<IsolationVM>(isolation));
         }
-        [DisableCors]
+
         [HttpGet]
         public async Task<IEnumerable<Isolation>> AllIsolations()
         {
@@ -44,7 +44,7 @@ namespace PrisonBack.Controllers
             var isolations = await _isolationService.AllIsolations(userName);
             return isolations;
         }
-        [DisableCors]
+
         [HttpPost]
         public ActionResult<IsolationVM> AddPass([FromBody] IsolationDTO isolationDTO)
         {
@@ -60,7 +60,7 @@ namespace PrisonBack.Controllers
             _loggerService.AddLog(controller, "Dodano więźnia do izolatki", userName);
             return Ok();
         }
-        [DisableCors]
+
         [HttpDelete("{id}")]
         public ActionResult DeleteIsolation(int id)
         {
@@ -80,7 +80,7 @@ namespace PrisonBack.Controllers
             _loggerService.AddLog(controller, "Usunięto więźnia z izolatki", userName);
             return Ok();
         }
-        [DisableCors]
+
         [HttpPut("{id}")]
         public ActionResult UpdateIsolation(int id, [FromBody] IsolationDTO isolationDTO)
         {

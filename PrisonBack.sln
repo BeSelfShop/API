@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrisonBack", "PrisonBack\PrisonBack.csproj", "{3F207045-36F2-4D58-ACB8-344C2E136216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrisonBackTests", "PrisonBackTests\PrisonBackTests.csproj", "{F8CE2B46-EA8A-423C-9B63-43E1FF3F6AD2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -31,14 +31,14 @@ namespace PrisonBack.Controllers
             _mapper = mapper;
             _loggerService = loggerService;
         }
-        [DisableCors]
+
         [HttpGet("{id}")]
         public ActionResult<PassVM> SelectedPass(int id)
         {
             var pass = _passService.SelectedPass(id);
             return Ok(_mapper.Map<PassVM>(pass));
         }
-        [DisableCors]
+
         [HttpGet]
         public async Task<IEnumerable<Pass>> AllPasses()
         {
@@ -47,7 +47,7 @@ namespace PrisonBack.Controllers
             var pass = await _passService.AllPass(userName);
             return pass;
         }
-        [DisableCors]
+
         [HttpPost]
         public ActionResult<PassVM> AddPass([FromBody] PassDTO passDTO)
         {
@@ -65,7 +65,7 @@ namespace PrisonBack.Controllers
 
             return Ok();
         }
-        [DisableCors]
+
         [HttpDelete("{id}")]
         public ActionResult DeletePass(int id)
         {
@@ -85,7 +85,7 @@ namespace PrisonBack.Controllers
 
             return Ok();
         }
-        [DisableCors]
+
         [HttpPut("{id}")]
         public ActionResult UpdatePass(int id, [FromBody] PassDTO passDTO)
         {

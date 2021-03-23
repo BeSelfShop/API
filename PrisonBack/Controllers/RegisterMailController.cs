@@ -21,7 +21,7 @@ namespace PrisonBack.Controllers
         {
             _mailService = mailService;
         }
-        [DisableCors]
+
         [HttpPost("send")]
         public async Task<IActionResult> SendMail([FromBody] MailRequest request)
         {

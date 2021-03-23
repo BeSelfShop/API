@@ -20,7 +20,7 @@ namespace PrisonBack.Controllers
         {
             _userInfoService = userInfoService;
         }
-        [DisableCors]
+
         [HttpGet]
         public ActionResult<UserInfoVM> UserInfo()
         {

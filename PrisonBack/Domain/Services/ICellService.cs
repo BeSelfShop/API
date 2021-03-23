@@ -9,7 +9,7 @@ namespace PrisonBack.Domain.Services
     public interface ICellService
     {
         Cell SelectedCell(int id);
-        List<Cell> AllCell(string userName);
+        Task<IEnumerable<Cell>> AllCell(string userName);
         void CreateCell(Cell cell);
         bool SaveChanges();
         void DeleteCell(Cell cell);

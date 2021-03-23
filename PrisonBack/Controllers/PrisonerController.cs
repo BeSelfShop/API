@@ -29,7 +29,7 @@ namespace PrisonBack.Controllers
 			_mapper = mapper;
 			_loggerService = loggerService;
 		}
-		[DisableCors]
+
 		[HttpGet("{id}")]
 		public ActionResult<PrisonerVM> SelectedPrisoner(int id)
 		{

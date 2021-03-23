@@ -27,14 +27,14 @@ namespace PrisonBack.Controllers
             _mapper = mapper;
             _loggerService = loggerService;
         }
-        [DisableCors]
+
         [HttpGet("{id}")]
         public ActionResult<Punishment> SelectedPunishment(int id)
         {
             var punishment = _punishmentService.SelectedPunishment(id);
             return Ok(_mapper.Map<PunishmentVM>(punishment));
         }
-        [DisableCors]
+
         [HttpPost]
         public ActionResult<Punishment> AddPunishment([FromBody] PunishmentDTO punishmentDTO)
         {
@@ -51,7 +51,7 @@ namespace PrisonBack.Controllers
 
             return NoContent();
         }
-        [DisableCors]
+
         [HttpDelete("{id}")]
         public ActionResult DeletePunishment(int id)
         {
@@ -68,7 +68,7 @@ namespace PrisonBack.Controllers
 
             return Ok();
         }
-        [DisableCors]
+
         [HttpPut("{id}")]
         public ActionResult UpdatePunishment(int id, [FromBody] PunishmentDTO punishmentDTO)
         {

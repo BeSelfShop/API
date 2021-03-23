@@ -24,7 +24,7 @@ namespace PrisonBack.Controllers
 
             _loggerService = loggerService;
         }
-        [DisableCors]
+ 
         [HttpGet]
         public async Task<IEnumerable<Logger>> AllLogs()
         {

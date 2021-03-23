@@ -28,32 +28,28 @@ namespace PrisonBack.Controllers
             _mapper = mapper;
             _loggerService = loggerService;
         }
-        [DisableCors]
+
         [HttpGet("{id}")]
         public ActionResult<CellVM> SelectedCell(int id)
         {
             var cell = _cellService.SelectedCell(id);
             return Ok(_mapper.Map<CellVM>(cell));
         }
-        [DisableCors]
+
         [HttpGet]
 
-        public ActionResult<Cell> AllCell()
+        public async Task<IEnumerable<Cell>> AllCell()
         {
             string userName =  User.Identity.Name;
-            try
-            {
+
                 
-                var cell = _cellService.AllCell(userName);
-                return new JsonResult(cell);
-            }
-            catch(Exception ex)
-            {
-                _loggerService.AddLog(controller, ex.Message, userName);
-                return NoContent();
-            }
+                var cell = await _cellService.AllCell(userName);
+               
+                return cell;
+
+
         }
-        [DisableCors]
+
         [HttpPost]
         public ActionResult<CellVM> AddCell([FromBody] CellDTO cellDTO)
         {
@@ -74,7 +70,7 @@ namespace PrisonBack.Controllers
             _loggerService.AddLog(controller, "Dodano nową cele", userName);
             return Ok();
         }
-        [DisableCors]
+
         [HttpDelete("{id}")]
         public ActionResult DeleteCell(int id)
         {
@@ -89,7 +85,7 @@ namespace PrisonBack.Controllers
             _loggerService.AddLog(controller, "Usunięto cele o ID " + cell.Id, userName);
             return Ok();
         }
-        [DisableCors]
+
         [HttpPut("{id}")]
         public ActionResult UpdateCell(int id, [FromBody] CellDTO cellDTO)
         {

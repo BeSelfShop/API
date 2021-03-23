@@ -171,10 +171,6 @@ C:\ppo\39607\PrisonBack\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.dll
 C:\ppo\39607\PrisonBack\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.pdb
 C:\ppo\39607\PrisonBack\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.genruntimeconfig.cache
 C:\Users\barti\source\repos\Projekt\test\PrisonBack\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\barti\source\repos\Projekt\test\PrisonBack\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Users\barti\source\repos\Projekt\test\PrisonBack\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-C:\Users\barti\source\repos\Projekt\test\PrisonBack\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
-C:\Users\barti\source\repos\Projekt\test\PrisonBack\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\local\mssql1.arm.json
 C:\Users\barti\source\repos\Projekt\test\PrisonBack\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\barti\source\repos\Projekt\test\PrisonBack\bin\Debug\netcoreapp3.1\PrisonBack.exe
 C:\Users\barti\source\repos\Projekt\test\PrisonBack\bin\Debug\netcoreapp3.1\PrisonBack.deps.json
@@ -345,3 +341,4 @@ C:\ppo\39607\API\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.csproj.CopyComple
 C:\ppo\39607\API\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.dll
 C:\ppo\39607\API\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.pdb
 C:\ppo\39607\API\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.genruntimeconfig.cache
+C:\Users\barti\source\repos\Projekt\test\PrisonBack\obj\Debug\netcoreapp3.1\scopedcss\bundle\PrisonBack.styles.css

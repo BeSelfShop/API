@@ -21,7 +21,6 @@ namespace PrisonBack.Controllers
 			_cellTypeService = cellTypeService;
 
 		}
-		[DisableCors]
 		[HttpGet]
 		public async Task<IEnumerable<CellType>> AllCellType()
 		{
