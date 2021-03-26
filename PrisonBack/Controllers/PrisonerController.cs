@@ -36,7 +36,7 @@ namespace PrisonBack.Controllers
 			var prisoner = _prisonerService.SelectedPrisoner(id);
 			return Ok(_mapper.Map<PrisonerVM>(prisoner));
 		}
-		[DisableCors]
+		
 		[HttpGet]
 		public async Task<IEnumerable<Prisoner>> AllPrisoner()
 		{
@@ -44,7 +44,6 @@ namespace PrisonBack.Controllers
 			var prisoner = await _prisonerService.AllPrisoner(userName);
 			return prisoner;
 		}
-		[DisableCors]
 		[HttpPost]
 		public ActionResult<PrisonerVM> AddPrisoner([FromBody] PrisonerDTO prisonerDTO)
 		{
@@ -54,9 +53,9 @@ namespace PrisonBack.Controllers
 			_prisonerService.SaveChanges();
 			_loggerService.AddLog(controller, "Dodano więźnia", userName);
 
-			return Ok();
+			return Ok(StatusCode(200));
 		}
-		[DisableCors]
+	
 		[HttpDelete("{id}")]
 		public ActionResult DeletePrisoner(int id)
 		{
@@ -72,9 +71,9 @@ namespace PrisonBack.Controllers
 			_loggerService.AddLog(controller, "Usunięto więźnia", userName);
 
 
-			return Ok();
+			return Ok(StatusCode(200));
 		}
-		[DisableCors]
+	
 		[HttpPut("{id}")]
 		public ActionResult UpdatePrisoner(int id, [FromBody] PrisonerDTO prisonerDTO)
 		{
@@ -91,7 +90,7 @@ namespace PrisonBack.Controllers
 			_loggerService.AddLog(controller, "Edytowano dane więźnia", userName);
 
 
-			return Ok();
+			return Ok(StatusCode(200));
 		}
 
 	}

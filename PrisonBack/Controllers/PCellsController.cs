@@ -68,7 +68,7 @@ namespace PrisonBack.Controllers
             _cellService.CreateCell(cellModel);
             _cellService.SaveChanges();
             _loggerService.AddLog(controller, "Dodano nową cele", userName);
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
         [HttpDelete("{id}")]
@@ -83,7 +83,7 @@ namespace PrisonBack.Controllers
             _cellService.DeleteCell(cell);
             _cellService.SaveChanges();
             _loggerService.AddLog(controller, "Usunięto cele o ID " + cell.Id, userName);
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
         [HttpPut("{id}")]
@@ -101,7 +101,7 @@ namespace PrisonBack.Controllers
 
             _loggerService.AddLog(controller, "Edytowano cele o ID " + cell.Id, userName);
 
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
     }
