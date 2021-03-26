@@ -22,7 +22,10 @@ namespace PrisonBack.Persistence.Repositories
         {
             var prison = _context.UserPermissions.FirstOrDefault(x => x.UserName == userName);
 
-            return await _context.Prisoners.Where(x => x.Cell.IdPrison == prison.IdPrison).Include(x => x.Punishments).ToListAsync();
+            return await _context.Prisoners.Where(x => x.Cell.IdPrison == prison.IdPrison)
+                .Include(x => x.Punishments)
+                .ThenInclude(r => r.Reason)
+                .ToListAsync();
 
 
         }
@@ -39,7 +42,15 @@ namespace PrisonBack.Persistence.Repositories
 
         public void DeletePrisoner(Prisoner prisoner)
         {
+            
+            Punishment punishment =  _context.Punishments.FirstOrDefault(x => x.IdPrisoner == prisoner.Id);
+            if (punishment != null)
+            {
+                _context.Punishments.Remove(punishment);
+            }
+            
             _context.Prisoners.Remove(prisoner);
+
         }
 
         public bool SaveChanges()

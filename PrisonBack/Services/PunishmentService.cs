@@ -20,10 +20,10 @@ namespace PrisonBack.Services
             _punishmentRepository.CreatePunishment(punishment);
         }
 
-        public void DeletePunishment(Punishment punishment)
+       /* public void DeletePunishment(Punishment punishment)
         {
             _punishmentRepository.DeletePunishment(punishment);
-        }
+        }*/
 
         public bool SaveChanges()
         {

@@ -13,7 +13,7 @@ namespace PrisonBack.Domain.Services
 
         void CreatePunishment(Punishment punishment);
         bool SaveChanges();
-        void DeletePunishment(Punishment punishment);
+      
         void UpdatePunishment(Punishment punishment);
 
     }

@@ -49,25 +49,10 @@ namespace PrisonBack.Controllers
             _punishmentService.SaveChanges();
             _loggerService.AddLog(controller, "Dodano karę dla więźnia", userName);
 
-            return NoContent();
+            return Ok(StatusCode(200));
         }
 
-        [HttpDelete("{id}")]
-        public ActionResult DeletePunishment(int id)
-        {
-            string userName = User.Identity.Name;
-
-            var punishment = _punishmentService.SelectedToDelateOrUpdatePunishment(id);
-            if (punishment == null)
-            {
-                return NotFound();
-            }
-            _punishmentService.DeletePunishment(punishment);
-            _punishmentService.SaveChanges();
-            _loggerService.AddLog(controller, "Usunięto karę więźnia", userName);
-
-            return Ok();
-        }
+     
 
         [HttpPut("{id}")]
         public ActionResult UpdatePunishment(int id, [FromBody] PunishmentDTO punishmentDTO)
@@ -86,7 +71,7 @@ namespace PrisonBack.Controllers
 
 
 
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
 

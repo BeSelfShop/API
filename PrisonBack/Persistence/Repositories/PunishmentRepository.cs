@@ -29,10 +29,10 @@ namespace PrisonBack.Persistence.Repositories
             _context.Punishments.Add(punishment);
         }
 
-        public void DeletePunishment(Punishment punishment)
+      /*  public void DeletePunishment(Punishment punishment)
         {
             _context.Punishments.Remove(punishment);
-        }
+        }*/
 
         public bool SaveChanges()
         {

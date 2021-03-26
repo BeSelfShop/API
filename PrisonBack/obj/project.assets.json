@@ -6868,24 +6868,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\barti\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\aleks\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ppo\\39607\\API\\PrisonBack\\PrisonBack.csproj",
+      "projectUniqueName": "D:\\KurortWiezienny\\API\\PrisonBack\\PrisonBack.csproj",
       "projectName": "PrisonBack",
-      "projectPath": "C:\\ppo\\39607\\API\\PrisonBack\\PrisonBack.csproj",
-      "packagesPath": "C:\\Users\\barti\\.nuget\\packages\\",
-      "outputPath": "C:\\ppo\\39607\\API\\PrisonBack\\obj\\",
+      "projectPath": "D:\\KurortWiezienny\\API\\PrisonBack\\PrisonBack.csproj",
+      "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
+      "outputPath": "D:\\KurortWiezienny\\API\\PrisonBack\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\barti\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6897,7 +6892,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6909,7 +6903,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "AutoMapper": {
             "target": "Package",
@@ -7000,7 +6993,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
