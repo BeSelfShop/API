@@ -82,7 +82,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdateIsolation(int id, [FromBody] IsolationDTO isolationDTO)
+        public ActionResult UpdateIsolation(int id, [FromBody] EditIsolationDTO isolationDTO)
         {
             string userName = User.Identity.Name;
             var isolation = _isolationService.SelectedIsolation(id);
@@ -90,7 +90,7 @@ namespace PrisonBack.Controllers
             {
                 return NotFound();
             }
-            _mapper.Map(isolationDTO, isolation);
+            isolation.EndDate = isolationDTO.EndDate;
             _isolationService.UpdateIsolation(isolation);
             _isolationService.SaveChanges();
             _loggerService.AddLog(controller, "Edytowano izolację więźnia", userName);

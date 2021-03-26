@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P7sM8voD3P3TJ8LRk/J5qgEMnsciK9bBBHYsbozLMJ3KZbJVtO5BflOJd+TZHiexbr3ZYCZw0MpK1iaDo+lZJQ==",
+  "dgSpecHash": "1bZZ2G0ZUbkO/RnsLuEtgprBIxnshXCHhkmSt5dkC9yzL5dvGpxLs0ZenBfPzyWMZ34ZJaXecx+vx82aDSzsrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\barti\\source\\repos\\Projekt\\test\\PrisonBack\\PrisonBack.csproj",
+  "projectFilePath": "C:\\ppo\\39607\\API\\PrisonBack\\PrisonBack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barti\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\barti\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
@@ -143,10 +143,7 @@
     "C:\\Users\\barti\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\barti\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\barti\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\barti\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\barti\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\barti\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\barti\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\barti\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

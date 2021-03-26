@@ -87,7 +87,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult UpdatePass(int id, [FromBody] PassDTO passDTO)
+        public ActionResult UpdatePass(int id, [FromBody] EditPassDTO passDTO)
         {
             string userName = User.Identity.Name;
             var pass = _passService.SelectedPass(id);
@@ -95,7 +95,7 @@ namespace PrisonBack.Controllers
             {
                 return NotFound();
             }
-            _mapper.Map(passDTO, pass);
+            pass.EndDate = passDTO.EndDate;
             _passService.UpdatePass(pass);
             _passService.SaveChanges();
             _loggerService.AddLog(controller, "Edytowano przepustkę więźnia", userName);

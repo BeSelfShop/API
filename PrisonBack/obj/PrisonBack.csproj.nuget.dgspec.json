@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barti\\source\\repos\\Projekt\\test\\PrisonBack\\PrisonBack.csproj": {}
+    "C:\\ppo\\39607\\API\\PrisonBack\\PrisonBack.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barti\\source\\repos\\Projekt\\test\\PrisonBack\\PrisonBack.csproj": {
+    "C:\\ppo\\39607\\API\\PrisonBack\\PrisonBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barti\\source\\repos\\Projekt\\test\\PrisonBack\\PrisonBack.csproj",
+        "projectUniqueName": "C:\\ppo\\39607\\API\\PrisonBack\\PrisonBack.csproj",
         "projectName": "PrisonBack",
-        "projectPath": "C:\\Users\\barti\\source\\repos\\Projekt\\test\\PrisonBack\\PrisonBack.csproj",
+        "projectPath": "C:\\ppo\\39607\\API\\PrisonBack\\PrisonBack.csproj",
         "packagesPath": "C:\\Users\\barti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barti\\source\\repos\\Projekt\\test\\PrisonBack\\obj\\",
+        "outputPath": "C:\\ppo\\39607\\API\\PrisonBack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -125,20 +125,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
