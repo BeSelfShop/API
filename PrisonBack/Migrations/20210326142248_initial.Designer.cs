@@ -10,8 +10,8 @@ using PrisonBack.Persistence.Context;
 namespace PrisonBack.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201213222726_edit_invCode")]
-    partial class edit_invCode
+    [Migration("20210326142248_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -230,13 +230,19 @@ namespace PrisonBack.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("Beds")
+                    b.Property<int>("BedsCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("CellNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdCellType")
                         .HasColumnType("int");
 
                     b.Property<int>("IdPrison")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OccupiedBeds")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

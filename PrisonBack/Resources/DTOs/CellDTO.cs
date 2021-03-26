@@ -9,10 +9,13 @@ namespace PrisonBack.Resources
     public class CellDTO
     {
         [Required(ErrorMessage = "Ilość łóżek jest wymagana!")]
+        public int BedsCount { get; set; }
 
-        public int Beds { get; set; }
         [Required(ErrorMessage = "Typ celi jest wymagany")]
-
         public int IdCellType { get; set; }
+
+        [Required(ErrorMessage = "Numer celi jest wymagany")]
+        public string CellNumber { get; set; }
+        
     }
 }

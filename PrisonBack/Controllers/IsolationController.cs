@@ -58,7 +58,7 @@ namespace PrisonBack.Controllers
             _isolationService.SetPrisonerStatusTrue(isolationModel);
             _isolationService.SaveChanges();
             _loggerService.AddLog(controller, "Dodano więźnia do izolatki", userName);
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
         [HttpDelete("{id}")]
@@ -78,7 +78,7 @@ namespace PrisonBack.Controllers
 
             _isolationService.SaveChanges();
             _loggerService.AddLog(controller, "Usunięto więźnia z izolatki", userName);
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
         [HttpPut("{id}")]
@@ -96,7 +96,7 @@ namespace PrisonBack.Controllers
             _loggerService.AddLog(controller, "Edytowano izolację więźnia", userName);
 
 
-            return Ok();
+            return Ok(StatusCode(200));
         }
     }
 }

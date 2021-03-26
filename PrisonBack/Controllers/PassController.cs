@@ -63,7 +63,7 @@ namespace PrisonBack.Controllers
 
             _loggerService.AddLog(controller, "Dodano przepustkę więźnia", userName);
 
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
         [HttpDelete("{id}")]
@@ -83,7 +83,7 @@ namespace PrisonBack.Controllers
             _passService.SaveChanges();
             _loggerService.AddLog(controller, "Usunięto przepustkę więźnia", userName);
 
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
         [HttpPut("{id}")]
@@ -101,7 +101,7 @@ namespace PrisonBack.Controllers
             _loggerService.AddLog(controller, "Edytowano przepustkę więźnia", userName);
 
 
-            return Ok();
+            return Ok(StatusCode(200));
         }
 
        

@@ -11,11 +11,12 @@ using PrisonBack.Domain.Models;
 using PrisonBack.Domain.Services;
 using PrisonBack.Resources.DTOs;
 using PrisonBack.Resources.ViewModels;
+using PrisonBack.Auth;
 
 namespace PrisonBack.Controllers
 {
 	[Route("/api/[controller]")]
-	[Authorize]
+	
 	public class PrisonerController : Controller
 	{
 		private readonly IPrisonerService _prisonerService;
@@ -31,6 +32,7 @@ namespace PrisonBack.Controllers
 		}
 
 		[HttpGet("{id}")]
+		[Authorize]
 		public ActionResult<PrisonerVM> SelectedPrisoner(int id)
 		{
 			var prisoner = _prisonerService.SelectedPrisoner(id);
@@ -38,6 +40,7 @@ namespace PrisonBack.Controllers
 		}
 		
 		[HttpGet]
+		[Authorize]
 		public async Task<IEnumerable<Prisoner>> AllPrisoner()
 		{
 			string userName = User.Identity.Name;
@@ -45,6 +48,7 @@ namespace PrisonBack.Controllers
 			return prisoner;
 		}
 		[HttpPost]
+		[Authorize(Roles = UserRoles.Admin)]
 		public ActionResult<PrisonerVM> AddPrisoner([FromBody] PrisonerDTO prisonerDTO)
 		{
 			string userName = User.Identity.Name;
@@ -57,6 +61,7 @@ namespace PrisonBack.Controllers
 		}
 	
 		[HttpDelete("{id}")]
+		[Authorize(Roles = UserRoles.Admin)]
 		public ActionResult DeletePrisoner(int id)
 		{
 			string userName = User.Identity.Name;
@@ -75,6 +80,7 @@ namespace PrisonBack.Controllers
 		}
 	
 		[HttpPut("{id}")]
+		[Authorize(Roles = UserRoles.Admin)]
 		public ActionResult UpdatePrisoner(int id, [FromBody] PrisonerDTO prisonerDTO)
 		{
 			string userName = User.Identity.Name;

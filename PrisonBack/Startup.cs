@@ -136,6 +136,9 @@ namespace PrisonBack
             services.AddScoped<IReasonService, ReasonService>();
             services.AddScoped<IReasonRepository, ReasonRepository>();
 
+            services.AddScoped<IUserPermissionsService, UserPermissionService>();
+            services.AddScoped<IUserPermissionsRepository, UserPermissionRepository>();
+
             services.AddScoped<INotificationRepository, NotificationRepository>();
 
             services.AddTransient<IMailService, MailService>();

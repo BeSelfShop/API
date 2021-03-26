@@ -9,8 +9,10 @@ namespace PrisonBack.Domain.Models
     {
         [Key]
         public int Id { get; set; }
-        public int Beds { get; set; }
-        public int IdPrison { get; set; }
+        public string CellNumber { get; set; }
+        public int BedsCount { get; set; }
+        public int IdPrison { get; set; } 
+        public int OccupiedBeds { get; set; }
         public int IdCellType { get; set; }
 
         [ForeignKey("IdPrison")]

@@ -29,7 +29,7 @@ namespace PrisonBack.Controllers
             {
                 string userName = User.Identity.Name;
                 await _mailService.SendEmailAsync(request, userName);
-                return Ok();
+                return Ok(StatusCode(200));
             }
             catch (Exception ex)
             {

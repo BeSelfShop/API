@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace PrisonBack.Controllers
 {
     [Route("/api/[controller]")]
-    [Authorize]
+    
 
     public class PCellsController : Controller
     {
@@ -30,6 +30,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<CellVM> SelectedCell(int id)
         {
             var cell = _cellService.SelectedCell(id);
@@ -37,7 +38,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpGet]
-
+        [Authorize]
         public async Task<IEnumerable<Cell>> AllCell()
         {
             string userName =  User.Identity.Name;
@@ -51,6 +52,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = UserRoles.Admin)]
         public ActionResult<CellVM> AddCell([FromBody] CellDTO cellDTO)
         {
             string userName = User.Identity.Name;
@@ -61,7 +63,7 @@ namespace PrisonBack.Controllers
             var cellModel = _mapper.Map<Cell>(cellDTO);
             cellModel.IdPrison = _cellService.PrisonID(userName);
 
-            if ((cellModel.Id == null)&&(cellModel.IdCellType == 0))
+            if ((cellModel.Id == 0)&&(cellModel.IdCellType == 0))
             {
                 return NotFound();
             }
@@ -72,6 +74,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = UserRoles.Admin)]
         public ActionResult DeleteCell(int id)
         {
             string userName = User.Identity.Name;
@@ -87,6 +90,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = UserRoles.Admin)]
         public ActionResult UpdateCell(int id, [FromBody] CellDTO cellDTO)
         {
             string userName = User.Identity.Name;

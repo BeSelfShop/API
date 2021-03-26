@@ -12,65 +12,73 @@ using System.Threading.Tasks;
 
 namespace PrisonBack.Persistence.Repositories
 {
-    public class PrisonerRepository : BaseRepository, IPrisonerRepository
-    {
-        public PrisonerRepository(AppDbContext context) : base(context)
-        {
+	public class PrisonerRepository : BaseRepository, IPrisonerRepository
+	{
+		public PrisonerRepository(AppDbContext context) : base(context)
+		{
 
-        }
-        public async Task<IEnumerable<Prisoner>> AllPrisoner(string userName)
-        {
-            var prison = _context.UserPermissions.FirstOrDefault(x => x.UserName == userName);
+		}
+		public async Task<IEnumerable<Prisoner>> AllPrisoner(string userName)
+		{
+			var prison = _context.UserPermissions.FirstOrDefault(x => x.UserName == userName);
 
-            return await _context.Prisoners.Where(x => x.Cell.IdPrison == prison.IdPrison)
-                .Include(x => x.Punishments)
-                .ThenInclude(r => r.Reason)
-                .ToListAsync();
+			return await _context.Prisoners.Where(x => x.Cell.IdPrison == prison.IdPrison)
+				.Include(x => x.Punishments)
+				.ThenInclude(r => r.Reason)
+				.ToListAsync();
 
+		}
+		public async Task<IEnumerable<UserPermission>> Prison(string userName)
+		{
+			return await _context.UserPermissions.Where(x => x.UserName == userName).ToListAsync();
 
-        }
-        public async Task<IEnumerable<UserPermission>> Prison(string userName)
-        {
-            return await _context.UserPermissions.Where(x => x.UserName == userName).ToListAsync();
+		}
 
-        }
+		public void CreatePrisoner(Prisoner prisoner)
+		{
+			if (prisoner != null)
+			{
+				_context.Prisoners.Add(prisoner);
+				Cell cell = _context.Cells.FirstOrDefault(c => c.Id == prisoner.IdCell);
+				cell.OccupiedBeds++;
+				_context.Cells.Update(cell);
+			}
+		}
 
-        public void CreatePrisoner(Prisoner prisoner)
-        {
-            _context.Prisoners.Add(prisoner);
-        }
+		public void DeletePrisoner(Prisoner prisoner)
+		{
+			
+			Punishment punishment =  _context.Punishments.FirstOrDefault(x => x.IdPrisoner == prisoner.Id);
+			if (punishment != null)
+			{
+				_context.Punishments.Remove(punishment);
+			}
+			Cell cell = _context.Cells.FirstOrDefault(c => c.Id == prisoner.IdCell);
+			cell.OccupiedBeds--;
+			_context.Cells.Update(cell);
 
-        public void DeletePrisoner(Prisoner prisoner)
-        {
-            
-            Punishment punishment =  _context.Punishments.FirstOrDefault(x => x.IdPrisoner == prisoner.Id);
-            if (punishment != null)
-            {
-                _context.Punishments.Remove(punishment);
-            }
-            
-            _context.Prisoners.Remove(prisoner);
+			_context.Prisoners.Remove(prisoner);
 
-        }
+		}
 
-        public bool SaveChanges()
-        {
-            return (_context.SaveChanges() >= 0);
-        }
+		public bool SaveChanges()
+		{
+			return (_context.SaveChanges() >= 0);
+		}
 
-        public Prisoner SelectedPrisoner(int id)
-        {
-            return _context.Prisoners.FirstOrDefault(x => x.Id == id);
+		public Prisoner SelectedPrisoner(int id)
+		{
+			return _context.Prisoners.FirstOrDefault(x => x.Id == id);
 
-        }
+		}
 
-        public void UpdatePrisoner(Prisoner prisoner)
-        {
-        }
-        public int PrisonID(string userName)
-        {
-            var prison = _context.UserPermissions.FirstOrDefault(x => x.UserName == userName);
-            return prison.IdPrison;
-        }
-    }
+		public void UpdatePrisoner(Prisoner prisoner)
+		{
+		}
+		public int PrisonID(string userName)
+		{
+			var prison = _context.UserPermissions.FirstOrDefault(x => x.UserName == userName);
+			return prison.IdPrison;
+		}
+	}
 }

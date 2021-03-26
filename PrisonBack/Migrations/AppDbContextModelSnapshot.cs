@@ -228,13 +228,19 @@ namespace PrisonBack.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("Beds")
+                    b.Property<int>("BedsCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("CellNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdCellType")
                         .HasColumnType("int");
 
                     b.Property<int>("IdPrison")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OccupiedBeds")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using PrisonBack.Auth;
 using PrisonBack.Domain.Models;
 using PrisonBack.Domain.Services;
+using PrisonBack.Persistence.Repositories;
 using PrisonBack.Mailing;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,8 @@ namespace PrisonBack.Controllers
         private readonly IInviteCodeService _inviteCodeService;
         private readonly IAddUserService _addUserService;
         private readonly IPrisonService _prisonService;
-        public AuthenticationController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IInviteCodeService inviteCodeService, IAddUserService addUserService, IPrisonService prisonService)
+        private readonly IUserPermissionsService _userPermissionsService;
+        public AuthenticationController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, IInviteCodeService inviteCodeService, IAddUserService addUserService, IPrisonService prisonService, IUserPermissionsService userPermissionsService)
         {
             _configuration = configuration;
             _roleManager = roleManager;
@@ -39,6 +41,7 @@ namespace PrisonBack.Controllers
             _inviteCodeService = inviteCodeService;
             _addUserService = addUserService;
             _prisonService = prisonService;
+            _userPermissionsService = userPermissionsService;
         }
         [HttpPost]
         [Route("login")]
@@ -147,6 +150,7 @@ namespace PrisonBack.Controllers
             Prison prison = new Prison();
             prison.PrisonName = model.PrisonName;
             _prisonService.CreatePrison(prison);
+            _userPermissionsService.AddUserPermissions(model.UserName, model.PrisonName);
             return Ok(new Response { Status = "Success", Message = "Użytkownik został stworzony!" });
         }
 

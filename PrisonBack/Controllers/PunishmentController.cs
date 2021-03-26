@@ -9,11 +9,12 @@ using Microsoft.AspNetCore.Mvc;
 using PrisonBack.Domain.Models;
 using PrisonBack.Domain.Services;
 using PrisonBack.Resources;
+using PrisonBack.Auth;
 
 namespace PrisonBack.Controllers
 {
     [Route("/api/[controller]")]
-    [Authorize]
+    //[Authorize]
 
     public class PunishmentController : Controller
     {
@@ -29,6 +30,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<Punishment> SelectedPunishment(int id)
         {
             var punishment = _punishmentService.SelectedPunishment(id);
@@ -36,6 +38,7 @@ namespace PrisonBack.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = UserRoles.Admin)]
         public ActionResult<Punishment> AddPunishment([FromBody] PunishmentDTO punishmentDTO)
         {
             string userName = User.Identity.Name;
@@ -55,6 +58,7 @@ namespace PrisonBack.Controllers
      
 
         [HttpPut("{id}")]
+        [Authorize(Roles = UserRoles.Admin)]
         public ActionResult UpdatePunishment(int id, [FromBody] PunishmentDTO punishmentDTO)
         {
             string userName = User.Identity.Name;
