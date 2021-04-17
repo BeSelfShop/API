@@ -47,7 +47,7 @@ namespace PrisonBack.Persistence.Repositories
 
         public Punishment SelectedToDelateOrUpdatePunishment(int id)
         {
-            return _context.Punishments.FirstOrDefault(x => x.Id == id);
+            return _context.Punishments.FirstOrDefault(x => x.IdPrisoner == id);
         }
 
         public void UpdatePunishment(Punishment punishment)

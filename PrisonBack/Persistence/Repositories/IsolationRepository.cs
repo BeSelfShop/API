@@ -39,7 +39,7 @@ namespace PrisonBack.Persistence.Repositories
 
         public Isolation SelectedIsolation(int id)
         {
-           return _context.Isolations.FirstOrDefault(x => x.Id == id);
+           return _context.Isolations.FirstOrDefault(x => x.IdPrisoner == id);
         }
 
         public void SetPrisonerStatusFalse(Isolation isolation)

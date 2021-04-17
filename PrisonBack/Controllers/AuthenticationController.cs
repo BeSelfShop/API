@@ -45,7 +45,7 @@ namespace PrisonBack.Controllers
         }
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login([FromForm] LoginModel model)
+        public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace PrisonBack.Controllers
                     var token = new JwtSecurityToken(
                         issuer: _configuration["JWT:ValidIssuer"],
                         audience: _configuration["JWT:ValidAudience"],
-                        expires: DateTime.Now.AddHours(3),
+                        expires: DateTime.Now.AddYears(3),
                         claims: authClaims,
                         signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                         );

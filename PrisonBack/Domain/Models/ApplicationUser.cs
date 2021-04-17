@@ -7,6 +7,8 @@ namespace PrisonBack.Domain.Models
     {
         public string Name { get; set; }
         public string Forname { get; set; }
+        public long? FacebookId { get; set; }
+        public string PictureUrl { get; set; }
 
     }
 }

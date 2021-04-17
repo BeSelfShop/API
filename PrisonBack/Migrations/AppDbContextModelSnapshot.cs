@@ -169,6 +169,9 @@ namespace PrisonBack.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<long?>("FacebookId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Forname")
                         .HasColumnType("nvarchar(max)");
 
@@ -197,6 +200,9 @@ namespace PrisonBack.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("PictureUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -265,6 +271,35 @@ namespace PrisonBack.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CellType");
+                });
+
+            modelBuilder.Entity("PrisonBack.Domain.Models.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdIdentity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdentityId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Locale")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdentityId");
+
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("PrisonBack.Domain.Models.InviteCode", b =>
@@ -549,6 +584,15 @@ namespace PrisonBack.Migrations
                     b.Navigation("CellType");
 
                     b.Navigation("Prison");
+                });
+
+            modelBuilder.Entity("PrisonBack.Domain.Models.Customer", b =>
+                {
+                    b.HasOne("PrisonBack.Domain.Models.ApplicationUser", "Identity")
+                        .WithMany()
+                        .HasForeignKey("IdentityId");
+
+                    b.Navigation("Identity");
                 });
 
             modelBuilder.Entity("PrisonBack.Domain.Models.InviteCode", b =>

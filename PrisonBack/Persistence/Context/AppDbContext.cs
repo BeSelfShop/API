@@ -25,6 +25,7 @@ namespace PrisonBack.Persistence.Context
         public virtual DbSet<Isolation> Isolations { get; set; }
         public virtual DbSet<Logger> Loggers { get; set; }
         public virtual DbSet<InviteCode> InviteCodes { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

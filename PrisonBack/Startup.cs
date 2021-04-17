@@ -22,6 +22,8 @@ using PrisonBack.Mailing;
 using PrisonBack.Mailing.Service;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using PrisonBack.Auth.FacebookAuth.Jwt;
+using PrisonBack.Auth.FacebookAuth;
 
 namespace PrisonBack
 {
@@ -55,21 +57,23 @@ namespace PrisonBack
                     Name = "Authorization",
                     Type = SecuritySchemeType.ApiKey
                 });
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement {
-   {
-     new OpenApiSecurityScheme
-     {
-       Reference = new OpenApiReference
-       {
-         Type = ReferenceType.SecurityScheme,
-         Id = "Bearer"
-       }
-      },
-      new string[] { }
-    }
-  });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                 Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
+                });
             });
-            services.AddDbContext<AppDbContext>(options => {
+            services.AddDbContext<AppDbContext>(options =>
+            {
                 options.UseSqlServer(Configuration.GetConnectionString("PrisonDbContext"));
             });
 
@@ -97,7 +101,10 @@ namespace PrisonBack
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
                 };
             });
-
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ApiUser", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
+            });
             services.AddCors();
 
             services.AddScoped<ICellService, CellService>();
@@ -147,10 +154,11 @@ namespace PrisonBack
 
             services.AddTransient<INotificationMail, NotificationMail>();
 
-            
+
 
             services.AddScoped<IMailNotificationService, MailNotificationService>();
             services.AddSingleton<IHostedService, TimerService>();
+            services.AddSingleton<IJwtFactory, JwtFactory>();
 
 
 

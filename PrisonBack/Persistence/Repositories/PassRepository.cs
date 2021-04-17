@@ -40,7 +40,7 @@ namespace PrisonBack.Persistence.Repositories
 
         public Pass SelectedPass(int id)
         {
-            return _context.Passes.FirstOrDefault(x => x.Id == id);
+            return _context.Passes.FirstOrDefault(x => x.IdPrisoner == id);
         }
 
         public void SetPrisonerStatusFalse(Pass pass)
