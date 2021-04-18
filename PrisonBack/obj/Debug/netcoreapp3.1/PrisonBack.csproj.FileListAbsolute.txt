@@ -344,10 +344,6 @@ C:\ppo\39607\API\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.genruntimeconfig.
 C:\Users\barti\source\repos\Projekt\test\PrisonBack\obj\Debug\netcoreapp3.1\scopedcss\bundle\PrisonBack.styles.css
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\appsettings.json
-D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
-D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\local\mssql1.arm.json
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\PrisonBack.exe
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\PrisonBack.deps.json
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\PrisonBack.runtimeconfig.json
@@ -365,7 +361,6 @@ D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.I
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Versioning.dll
-D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\KurortWiezienny\API\PrisonBack\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -602,3 +597,4 @@ C:\Repos\test\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.csproj.CopyComplete
 C:\Repos\test\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.dll
 C:\Repos\test\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.pdb
 C:\Repos\test\PrisonBack\obj\Debug\netcoreapp3.1\PrisonBack.genruntimeconfig.cache
+D:\KurortWiezienny\API\PrisonBack\obj\Debug\netcoreapp3.1\scopedcss\bundle\PrisonBack.styles.css

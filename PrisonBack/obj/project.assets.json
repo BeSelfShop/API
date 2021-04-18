@@ -6839,19 +6839,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\barti\\.nuget\\packages\\": {}
+    "C:\\Users\\aleks\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repos\\test\\PrisonBack\\PrisonBack.csproj",
+      "projectUniqueName": "D:\\KurortWiezienny\\API\\PrisonBack\\PrisonBack.csproj",
       "projectName": "PrisonBack",
-      "projectPath": "C:\\Repos\\test\\PrisonBack\\PrisonBack.csproj",
-      "packagesPath": "C:\\Users\\barti\\.nuget\\packages\\",
-      "outputPath": "C:\\Repos\\test\\PrisonBack\\obj\\",
+      "projectPath": "D:\\KurortWiezienny\\API\\PrisonBack\\PrisonBack.csproj",
+      "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
+      "outputPath": "D:\\KurortWiezienny\\API\\PrisonBack\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\barti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
